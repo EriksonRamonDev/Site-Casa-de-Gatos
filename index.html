@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Casa dos Gatos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body id="corpo">
+    <!-- Barra de navegação -->
+    <nav id="navbarContainer" class="navbar col-12 position-fixed navbar-expand-lg text-white bg-dark bg-gradient" style="z-index: 999;">
+        <div class="container-fluid col-11 m-auto">
+          <a class="navbar-brand text-white" href="#">Casa dos Gatos</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#pets">Pets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#sobre">Sobre</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#contato">Contato</a>
+              </li>
+    
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+      <script>
+          const navbarContainer = document.getElementById('navbarContainer');
+          const navbarItems = navbarContainer.querySelectorAll('.nav-link');
+
+          navbarItems.forEach(navbarItem => {
+            navbarItem.addEventListener('click', () => {
+              navbarContainer.querySelector('.navbar-collapse').classList.remove('show');
+            });
+          });
+
+          window.addEventListener('click', event => {
+            if (!navbarContainer.contains(event.target)) {
+              navbarContainer.querySelector('.navbar-collapse').classList.remove('show');
+            }
+          });
+
+      </script>
+      
+
+      <br><br><br><br>
+      
+        <!-- Carrossel de imagens -->
+        <div id="carouselExampleIndicators" class="carousel slide col-11 m-auto" data-bs-ride="carousel" data-bs-interval="5000">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner rounded-4 " style="height: 900px;">
+            <div class="carousel-item active">
+                <img src="imagens/manosin.png.webp" class="w-100 d-block mx-auto rounded-4" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/Flor.png.webp" class="d-block w-100 mx-auto rounded-4" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="imagens/Mary.png.webp" class="d-block w-100 mx-auto rounded-4" alt="...">
+            </div>
+            </div>
+            <button class="carousel-control-prev align-self-center ms-auto" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next align-self-center" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+  
+  
+        <hr>
+        <br>
+        <br>
+      <div id="pets">
+        <h2 class="text-center">Pets</h2>
+      </div>
+      
+      <br>
+      <br>
+
+      <!-- Cards com os pets e modal em cada card -->
+      <div class="card-group col-11 m-auto">
+        <div id="cards" class="card rounded-4">
+          <img src="imagens/zecaixa.jpeg" class="card-img-top rounded-4" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Manhoso</h5>
+            <p class="card-text">Este é o Manhosinho, esse príncipe chegou até mim no 
+                ano de 2020 e ganhou o  coração de todos, sempre muito
+                "manhoso" e também muito medroso, um único movimento 
+                brusco e ele corre. 😄</p>
+            <p class="card-text"><small class="text-dark">O chamego do papai.</small></p>   
+          </div>
+
+            <!-- Botão para abrir o modal -->
+            <button type="button" class="btn btn-info text-white rounded-4" data-bs-toggle="modal" data-bs-target="#myModal">
+                Veja mais
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static">
+                <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                
+                    <!-- Cabeçalho do modal -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Mural do Manhoso</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    
+                    <!-- Corpo do modal -->
+                    <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                        <img src="imagens/Manhosogeladeira.jpeg" id="imgs" class="img-fluid">
+                        <p>Seu lugar preferido.</p>
+                        </div>
+                        <div class="col-md-4">
+                        <img src="imagens/zecaixa.jpeg" id="imgs" class="img-fluid">
+                        <p>Especialista em caixas pequenas. </p>
+                        </div>
+                        <div class="col-md-4">
+                        <img src="imagens/bemverde (2).jpeg" id="imgs" class="img-fluid">
+                        <p>Amante das plantas.</p>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    <!-- Rodapé do modal -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    </div>
+                    
+                </div>
+                </div>
+            </div>
+  
+        </div>
+
+        <!-- Segundo Card -->
+        <div id="cards" class="card rounded-4">
+          <img src="imagens/Flortv.jpeg" class="card-img-top rounded-4" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Flor</h5>
+            <p class="card-text">A Florzinha é o nosso anjinho, chegou até nós  
+                em um momento muito difícil e nos ajudou a enfrentar  
+                diversas situações. Esteve conosco por quase nove anos 
+                brincou muito, teve alguns filhotes, era muito "falante" 
+                e amava conversar com todos, a sua partida doeu e ainda  
+                dói muito, mas ela sempre estará viva dentro dos nossos  
+                corações. </p>
+            <p class="card-text"><small class="text-dark">Eterno amor da casa 😇.</small></p>
+          </div>
+            
+            <!-- Botão para abrir o modal -->
+            <button type="button" class="btn btn-info text-white rounded-4" data-bs-toggle="modal" data-bs-target="#myModal2">
+            Veja mais
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            
+                <!-- Cabeçalho do modal -->
+                <div class="modal-header">
+                <h4 class="modal-title">Mural da Flor.</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                
+                <!-- Corpo do modal -->
+                <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                    <img src="imagens/Flor.png.webp" id="imgs" class="img-fluid">
+                    <p>Reparando em tudo.</p>
+                    </div>
+                    <div class="col-md-4">
+                    <img src="imagens/flordormindo.jpeg" id="imgs" class="img-fluid">
+                    <p>Encostou e dormiu.</p>
+                    </div>
+                    <div class="col-md-4">
+                    <img src="imagens/flormatos.jpeg" id="imgs" class="img-fluid">
+                    <p>Assistindo um filminho.</p>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Rodapé do modal -->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Terceiro Card -->
+        <div id="cards" class="card rounded-4">
+          <img src="imagens/maryzinha.jpeg" class="card-img-top rounded-4" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Marinalva</h5>
+            <p class="card-text">A Marinalva e também conhecida como Mary – Mary é a mais nova da casa, 
+                foi resgatada da rua quando ainda era um bebê. Saiu de mais quietinha da ninhada e 
+                se tornou a mais arteira da casa, é a melhor amiga do Manhoso. Os dois brincam a  
+                madrugada inteira e dormem durante o dia é claro.  </p>
+                <br>
+                <br>
+            <p class="card-text"><small class="text-dark">Campeã mundial em derrubar lixeiras 🏆.</small></p>
+          </div>
+
+          <!-- Botão para abrir o modal -->
+          <button type="button" class="btn btn-info text-white rounded-4" data-bs-toggle="modal" data-bs-target="#myModal3">
+            Veja mais
+          </button>
+        
+          <!-- Modal -->
+          <div class="modal fade" id="myModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            
+                <!-- Cabeçalho do modal -->
+                <div class="modal-header">
+                <h4 class="modal-title">Mural da Marinalva.</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                
+                <!-- Corpo do modal -->
+                <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-4">
+                    <img src="imagens/marypapai.jpeg" id="imgs" class="img-fluid">
+                    <p>Estudando com o papai.</p>
+                    </div>
+                    <div class="col-md-4">
+                    <img src="imagens/maryyyyy.jpeg" id="imgs" class="img-fluid">
+                    <p>Me da um pouco mamãe? </p>
+                    </div>
+                    <div class="col-md-4">
+                    <img src="imagens/Mary.png.webp" id="imgs" class="img-fluid">
+                    <p>Quero carinho 🥺.</p>
+                    </div>
+                </div>
+                </div>
+                
+                <!-- Rodapé do modal -->
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+                
+            </div>
+            </div>
+        </div>
+
+        </div>
+
+      </div>
+      <br>
+      <hr>
+      <!-- Descrição do site -->
+      <div class="col-11 m-auto">
+        <br>
+        <h2 id="sobre" class="text-center">O que é a Casa dos Gatos?</h2>
+        <br>
+        <br>
+        <p>O site Casa dos Gatos é apenas um projeto pessoal feito para treinar técnicas de 
+            desenvolvimento web. Me chamo Erikson Duarte, curso ciência da computação na 
+            Faculdade Descomplica e este é meu primeiro projeto de front-end, resolvi 
+            criar este site para treinar e me aperfeiçoar no desenvolvimento web 
+            e usei tecnologias como: HTML, CSS, JAVASCRIPT e BOOTSTRAP5. </p>
+        <p>
+             Escolhi esse tema pois meus pets é uma das coisas que mais amo e nada melhor 
+            que desenvolver um primeiro projeto com muito amor e carinho. Este é 
+            apenas o meu primeiro projeto de front-end então qualquer sugestão de 
+            melhoria é muito bem-vinda, espero que gostem. 
+        </p>
+      </div>
+      <hr>
+      
+      <!-- Área de contato -->
+      <div class="col-11 m-auto">
+        <br>
+        <h2 id="contato" class="text-center">Contato</h2>
+        <br>
+        <br>
+        <div class="col-2 m-auto" style="width: 110px;">
+            <a href="https://wa.me/+5585988221376">
+                <i class="fa-brands fa-whatsapp" style="color: #21c03b; font-size: 110px;"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/erikson-duarte/">
+                <i class="fa-brands fa-linkedin" style="color: #0a74ff; font-size: 110px;"></i>
+            </a>
+             
+        </div>
+       
+      </div>
+<hr>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+
+  </body>
+</html>

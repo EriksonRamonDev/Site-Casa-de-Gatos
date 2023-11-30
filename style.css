@@ -1,0 +1,23 @@
+body {
+  background-color: #ffce76;
+  color: #772430;
+}
+
+#cards {
+  background-color: #d05643;
+  color: #fffffe;
+}
+
+.modal-content {
+  background-color: #d05643;
+  color: #fffffe;
+}
+
+.btn {
+  background-color: #9b3536;
+  border: none;
+}
+
+#imgs {
+  border-radius: 10px;
+}
